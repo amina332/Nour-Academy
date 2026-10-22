@@ -13,7 +13,7 @@
             <div>
                 <img src="images/logo.png" alt="Logo Nour Academy" width="80" height="80">
             </div>
-            <button>
+            <button class="cursor-pointer hover:scale-150" id="popup_button">
                 <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                     width="30px" height="30px" viewBox="0 0 56.581 56.582"
                     xml:space="preserve">
@@ -80,12 +80,18 @@
         </main>
     </div>
 
-    <div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
+    <!-- Popup -->
+    <div id="popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
         <div class="bg-white">
             <div>
-                <button></button>
+                <button id="exit_popup" class="cursor-pointer hover:scale-125">X</button>
+            </div>
+            <div>
+                <p>test</p>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
