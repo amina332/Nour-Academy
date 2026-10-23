@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,34 @@
     <title>Nour Academy</title>
 
 </head>
+
 <body>
     <div>
         <header class="flex justify-between items-center p-4 border-b">
             <div>
                 <img src="images/logo.png" alt="Logo Nour Academy" width="80" height="80">
             </div>
-            <button class="cursor-pointer hover:scale-150" id="popup_button">
-                <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    width="30px" height="30px" viewBox="0 0 56.581 56.582"
+            <button class="cursor-pointer hover:scale-125" id="popup_button">
+                <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 56.581 56.582"
                     xml:space="preserve">
                     <g>
                         <g>
                             <path d="M31.199,51.449c-2.864,0-5.195-2.331-5.195-5.195c0-2.863,2.331-5.195,5.195-5.195c2.864,0,5.195,2.332,5.195,5.195
                                 C36.395,49.118,34.064,51.449,31.199,51.449z M31.199,44.058c-1.211,0-2.195,0.984-2.195,2.195s0.984,2.195,2.195,2.195
-                                s2.195-0.984,2.195-2.195S32.41,44.058,31.199,44.058z"/>
+                                s2.195-0.984,2.195-2.195S32.41,44.058,31.199,44.058z" />
                         </g>
                         <g>
                             <path d="M43.85,51.449c-2.864,0-5.195-2.331-5.195-5.195c0-2.863,2.331-5.195,5.195-5.195c2.863,0,5.195,2.332,5.195,5.195
                                 C49.045,49.118,46.713,51.449,43.85,51.449z M43.85,44.058c-1.211,0-2.195,0.984-2.195,2.195s0.984,2.195,2.195,2.195
-                                s2.195-0.984,2.195-2.195S45.061,44.058,43.85,44.058z"/>
+                                s2.195-0.984,2.195-2.195S45.061,44.058,43.85,44.058z" />
                         </g>
                         <g>
                             <path d="M48.254,17.891H16.814l-1.227-3.611c-1.697-5.215-5.6-9.147-9.076-9.147H1.5c-0.828,0-1.5,0.672-1.5,1.5
                                 c0,0.828,0.672,1.5,1.5,1.5h5.011c1.854,0,4.866,2.905,6.229,7.094l6.441,18.941c1.669,5.129,7.201,9.146,12.594,9.146h11.3
                                 c5.451,0,10.683-4.16,11.91-9.473l1.34-5.804c0.617-2.674,0.11-5.211-1.428-7.146C53.359,18.956,50.999,17.891,48.254,17.891z
                                 M53.402,27.36l-1.34,5.804c-0.91,3.94-4.941,7.147-8.986,7.147h-11.3c-4.032,0-8.493-3.239-9.747-7.094l-4.194-12.328h30.418
-                                c1.812,0,3.338,0.663,4.295,1.868C53.508,23.962,53.811,25.598,53.402,27.36z"/>
+                                c1.812,0,3.338,0.663,4.295,1.868C53.508,23.962,53.811,25.598,53.402,27.36z" />
                         </g>
                     </g>
                 </svg>
@@ -46,52 +48,99 @@
             </section>
             <h1 class="text-3xl font-bold text-center">Courses</h1>
 
-            <div class="mt-10 grid grid-cols-5 gap-7"> <!--  /* cart container */ -->
-                <div class="border border-gray-400 rounded-lg p-5"> <!-- /* cart */ -->
-                    <div>
-                        <img src="images/francais.png" alt="la langue français">
-                    </div>
-                    <div class="mt-2.5">
-                        <h3 class="text-2xl">Français</h3> <!-- /*title*/  -->
-                        <p class="text-xs text-gray-400">Soir de 17h00 à 19h00</p> <!-- /*description*/  -->
-                    </div>
-                    <div class="flex justify-between mt-2.5 items-center">
-                        <p>280 MAD / mois</p> <!--   /*prix*/  -->
-                        <button class="border p-1.5 rounded-lg bg-[#123933] text-white hover:bg-[#123A34] transition-colors">Add to cart</button>
-                    </div>
-                </div>
+            <select name="Courses" id="course_select">
+                <option value="" disabled selected> Select course </option>
+                <option value="Tout">Tout</option>
+                <option value="Français">Français</option>
+                <option value="Anglais">Anglais</option>
+                <option value="Arabe">Arabe</option>
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Physique">Physique</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Informatique">Informatique</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="HTML et CSS">HTML et CSS</option>
+                <option value="Comptabilité">Comptabilité</option>
+                <option value="Économie">Économie</option>
+                <option value="Sciences naturelles">Sciences naturelles</option>
+                <option value="Histoire">Histoire</option>
+                <option value="Géographie">Géographie</option>
+                <option value="Préparation au Bac">Préparation au Bac</option>
+            </select>
 
-                <div class="border border-gray-400 rounded-lg p-5"> <!-- /* cart */ -->
-                    <div>
-                        <img src="images/American Flag.png" alt="la langue anglais">
-                    </div>
-                    <div class="mt-2.5">
-                        <h3 class="text-2xl">Anglais</h3> <!-- /*title*/  -->
-                        <p class="text-xs text-gray-400">L’après-midi de 14h00 à 16h00</p> <!-- /*description*/  -->
-                    </div>
-                    <div class="flex justify-between mt-2.5 items-center">
-                        <p>250 MAD / mois</p> <!--   /*prix*/  -->
-                        <button class="border p-1.5 rounded-lg bg-[#123933] text-white hover:bg-[#123A34] transition-colors">Add to cart</button>
-                    </div>
-                </div>
+            <div id="courses_container" class="mt-10 grid grid-cols-5 gap-7"> <!--  /* cart container */ -->
             </div>
-
-            <div></div>
         </main>
     </div>
 
-    <!-- Popup -->
-    <div id="popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
-        <div class="bg-white">
-            <div>
-                <button id="exit_popup" class="cursor-pointer hover:scale-125">X</button>
+    <div id="popup" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+
+        <div class="w-full max-w-lg rounded-2xl bg-white p-5 shadow-2xl">
+
+            <div class="mb-5 flex items-center justify-between border-b pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-[#123933]">
+                        Mon panier
+                    </h2>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Les cours que vous avez sélectionnés
+                    </p>
+                </div>
+
+                <button id="exit_popup"
+                    class="cursor-pointer rounded-full px-3 py-1 text-2xl text-gray-500 transition hover:bg-gray-100 hover:text-red-500"
+                    aria-label="Fermer le panier">
+                    &times;
+                </button>
             </div>
-            <div>
-                <p>test</p>
+
+            <div class="max-h-80 space-y-3 overflow-y-auto">
+
+                <!-- Cours 1 -->
+                <!-- <div class="flex gap-3 rounded-lg border border-gray-300 p-3">
+
+                    <img src="images/francais.png" alt="Cours de français" class="h-20 w-20 rounded-lg object-cover">
+
+                    <div class="flex flex-1 flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                Français
+                            </h3>
+                            <p class="text-xs text-gray-500">
+                                Soir de 17h00 à 19h00
+                            </p>
+                        </div>
+
+                        <p class="mt-2 font-semibold text-[#123933]">
+                            280 MAD / mois
+                        </p>
+                    </div>
+
+                    <button class="self-start text-sm text-red-500 hover:text-red-700"
+                        aria-label="Supprimer le cours de français">
+                        Supprimer
+                    </button>
+                </div> -->
             </div>
+
+            <div class="mt-5 border-t pt-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">Total mensuel</span>
+                    <span class="text-xl font-bold text-[#123933]">
+                        
+                    </span>
+                </div>
+
+                <button id="continue_shopping"
+                    class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 transition hover:bg-gray-100">
+                    Continuer mes achats
+                </button>
+            </div>
+
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
