@@ -158,8 +158,25 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
 
-});
+    const boutons = courses_container.querySelectorAll("button[data-id]");
 
+    boutons.forEach((bouton) => {
+
+        bouton.addEventListener("click", () => {
+
+            let id = bouton.dataset.id;
+
+            let course = courses.find((c) => c.id === id);
+
+            panier_course.push(course);
+
+            console.log(panier_course);
+
+        });
+
+    });
+
+});
 
 course_select.addEventListener("change", () => {
     courses_container.innerHTML = "";
@@ -209,3 +226,74 @@ exit_popup_button.addEventListener("click" , () => {
     popup.classList.remove("flex");
     popup.classList.add("hidden");
 })
+const bouton = document.getElementById("continue_shopping");
+
+bouton.addEventListener("click", function () {
+    popup.classList.remove("flex");
+    popup.classList.add("hidden");
+});
+
+const panierTotal = document.getElementById("panier-total");
+
+
+const signUp_button = document.getElementById("signUp_button");
+const signUp_popup = document.getElementById("signUp_popup");
+const exit_SignUp_popup = document.getElementById("exit_SignUp_popup");
+
+exit_SignUp_popup.addEventListener("click", () => {
+    signUp_popup.classList.remove("flex");
+    signUp_popup.classList.add("hidden");
+})
+
+signUp_button.addEventListener("click", () => {
+    signUp_popup.classList.remove("hidden");
+    signUp_popup.classList.add("flex");
+})
+
+
+
+const createAccountButton = document.getElementById("create_accounte_button");
+const telephone_input = document.getElementById("signup_phone");
+const email_input = document.getElementById("signup_email");
+const password_input = document.getElementById("signup_password");
+
+createAccountButton.addEventListener("click", () => {
+    verifierTelephone();
+    verifierEmail();
+    verifierPassword();
+});
+
+
+function verifierTelephone() {
+    const telephone = telephone_input.value.trim();
+
+    const tel_message = document.getElementById("tel_message");
+
+    const regex = /^(0[67]\d{8}|\+212[67]\d{8})$/;
+
+    if (!regex.test(telephone)) {
+        tel_message.classList.remove("hidden");
+    } 
+}
+
+function verifierEmail() {
+    const email_message = document.getElementById("email_message");
+    const email = email_input.value.trim();
+
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email)) {
+        email_message.classList.remove("hidden")
+    }
+}
+
+function verifierPassword() {
+    const password_message = document.getElementById("password_message");
+    const password = password_input.value;
+
+    const regex = /^.{8,}$/;
+
+    if (!regex.test(password)) {
+        password_message.classList.remove("hidden");
+    }
+}
