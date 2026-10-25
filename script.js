@@ -106,12 +106,11 @@ const courses = [
     }
 ];
 
-const panier_course = [
-    
-]
+const panier_course = []
 
 const course_select = document.getElementById("course_select");
 const courses_container = document.getElementById("courses_container");
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -170,7 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             panier_course.push(course);
 
-            console.log(panier_course);
+            bouton.textContent = "Complet";
+
+            bouton.disabled = true;
+
+            bouton.classList.add("bg-gray-300", "text-gray-600");
+
+            bouton.classList.remove("cursor-pointer");
+
+            bouton.classList.add("cursor-not-allowed");
 
         });
 
@@ -217,20 +224,59 @@ const popup_button = document.getElementById("popup_button");
 const popup = document.getElementById("popup");
 const exit_popup_button = document.getElementById("exit_popup");
 
-popup_button.addEventListener("click" , () => {
+popup_button.addEventListener("click", () => {
     popup.classList.remove("hidden");
     popup.classList.add("flex");
+
+    const panier_course_container = document.getElementById("panier_course_container");
+
+    panier_course.forEach((course) => {
+        panier_course_container.innerHTML += `
+            <div class="flex gap-3 rounded-lg border border-gray-300 p-3">
+
+                    <img src="${course.img}" alt="Cours de français" class="h-20 w-20 rounded-lg object-cover">
+
+                    <div class="flex flex-1 flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">
+                                ${course.titre}
+                            </h3>
+                            <p class="text-xs text-gray-500">
+                                Soir de 17h00 à 19h00
+                            </p>
+                        </div>
+
+                        <p class="mt-2 font-semibold text-[#123933]">
+                            ${course.prix} MAD / mois
+                        </p>
+                    </div>
+
+                    <button class="self-start text-sm text-red-500 hover:text-red-700"
+                        aria-label="Supprimer le cours de français">
+                        Supprimer
+                    </button>
+                </div>
+        `
+    })
 });
 
-exit_popup_button.addEventListener("click" , () => {
+exit_popup_button.addEventListener("click", () => {
     popup.classList.remove("flex");
     popup.classList.add("hidden");
+
+    const panier_course_container = document.getElementById("panier_course_container");
+
+    panier_course_container.innerHTML = ``;
 })
 const bouton = document.getElementById("continue_shopping");
 
-bouton.addEventListener("click", function () {
+bouton.addEventListener("click", () => {
     popup.classList.remove("flex");
     popup.classList.add("hidden");
+
+    const panier_course_container = document.getElementById("panier_course_container");
+
+    panier_course_container.innerHTML = ``;
 });
 
 const panierTotal = document.getElementById("panier-total");
@@ -273,7 +319,7 @@ function verifierTelephone() {
 
     if (!regex.test(telephone)) {
         tel_message.classList.remove("hidden");
-    } 
+    }
 }
 
 function verifierEmail() {
